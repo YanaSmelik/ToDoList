@@ -1,0 +1,55 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane fx:id="mainBorderPane" fx:controller="com.proj.todolist.Controller"
+            xmlns:fx="http://javafx.com/fxml" stylesheets="@styles.css">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="File">
+                    <items>
+                        <MenuItem text="New Item" onAction="#showAddToDoItemDialog"/>
+                        <SeparatorMenuItem/>
+                        <MenuItem text="Exit" onAction="#handleExit"/>
+                    </items>
+                </Menu>
+            </MenuBar>
+            <ToolBar>
+                <HBox>
+                    <Button onAction="#showAddToDoItemDialog" text="New">
+                        <tooltip>
+                            <Tooltip text="New To Do Item"/>
+                        </tooltip>
+                    </Button>
+                    <ToggleButton fx:id="filterToggleButton" text="Today" onAction="#handleFilterButton">
+                        <tooltip>
+                            <Tooltip text="Show only today's To Do Items"/>
+                        </tooltip>
+                    </ToggleButton>
+                </HBox>
+            </ToolBar>
+        </VBox>
+    </top>
+    <left>
+        <ListView fx:id="toDoListView" onKeyPressed="#handleKeyPressed">
+
+        </ListView>
+    </left>
+    <center>
+        <VBox style="-fx-background-color: #1A4A4F">
+            <TextArea fx:id="descriptionTextArea" wrapText="true" VBox.vgrow="ALWAYS" />
+            <HBox>
+                <Label text="Due: ">
+                    <font>
+                        <Font name="Arial bold" size="20"/>
+                    </font>
+                </Label>
+                <Label fx:id="dueDateLabel">
+                    <font>
+                        <Font name="Arial bold" size="20"/>
+                    </font>
+                </Label>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

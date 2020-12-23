@@ -1,0 +1,11 @@
+.button{
+-fx-background-color: #1A4A4F;
+-fx-text-fill: white;
+}
+
+.list-cell:filled:hover {
+    -fx-font-size: 20 pt ;
+}
+
+
+
